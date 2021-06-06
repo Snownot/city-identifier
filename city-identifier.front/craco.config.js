@@ -22,20 +22,6 @@ module.exports = {
                 config.plugins = [];
             }
 
-            webpackConfig.plugins.push(
-                process.env.NODE_ENV === 'production'
-                    ? new CopyWebpackPlugin([
-                        {
-                            from: 'src/lib/app.js',
-                        },
-                    ])
-                    : new CopyWebpackPlugin([
-                        {
-                            from: 'src/lib/app.js',
-                        },
-                    ]),
-            );
-
             return webpackConfig;
         },
     },

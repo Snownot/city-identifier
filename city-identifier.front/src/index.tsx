@@ -6,7 +6,7 @@ import {Provider} from 'mobx-react';
 import initializeStores from "./store/storeInitializer";
 import {BrowserRouter} from "react-router-dom";
 
-const stores = initializeStores();
+export const stores = initializeStores();
 ReactDOM.render(
     <Provider {...stores}>
         <BrowserRouter>
