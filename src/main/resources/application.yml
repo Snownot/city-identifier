@@ -1,0 +1,4 @@
+server:
+  port: ${SERVER_PORT:8585}
+
+auth.secret: JSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2
