@@ -50,7 +50,7 @@ export class AppClient {
             headers: {
                 Authorization: authorization
             },
-            method: 'GET',
+            method: 'HEAD',
             url: path,
             params: query,
             data: body ,

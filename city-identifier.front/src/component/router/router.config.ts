@@ -10,7 +10,6 @@ export const appRouters: any = [
 
     component: LoadableComponent(() => import('../../component/layout/AppLayout')),
     isLayout: true,
-    showInMenu: false,
   },
   {
     path: '/user',
@@ -18,8 +17,15 @@ export const appRouters: any = [
     title: 'User',
     component: LoadableComponent(() => import('../../component/layout/UserLayout')),
     isLayout: true,
-    showInMenu: false,
   },
+  {
+    path: '/Identifier',
+    name: 'Identifier',
+    permission: '',
+    title: 'Identifier',
+    showInMenu: true,
+    component: LoadableComponent(() => import('../../stage/Identifier')),
+  }
 ];
 
 

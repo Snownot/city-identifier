@@ -25,5 +25,9 @@ public class UserData {
     @Column(name = "created_data")
     private LocalDate createdDate;
 
+    @NotNull
+    @Column(name = "updated_data")
+    private LocalDate updatedDate;
+
 
 }

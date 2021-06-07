@@ -6,7 +6,6 @@ class SessionService {
         let result = await http.getApiServicesAppSessionGetCurrentLoginInformation(
             ((window as any).$Env as any).Authorization
         )
-        console.log(result)
         return result;
     }
 }

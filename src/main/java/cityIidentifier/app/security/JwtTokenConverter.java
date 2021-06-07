@@ -1,6 +1,7 @@
 package cityIidentifier.app.security;
 
 import cityIidentifier.app.domain.UserDto;
+import cityIidentifier.app.exception.UserFriendlyException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +24,7 @@ public class JwtTokenConverter {
             }
             return userDataDto;
         } catch (SecurityException e) {
-            throw new RuntimeException();
+            throw new UserFriendlyException("token error");
         }
     }
 }
