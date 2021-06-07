@@ -21,7 +21,6 @@ class UserLayout extends React.Component<any> {
             <Redirect from="/user" to="/user" />
           </Switch>
         </Col>
-
       </DocumentTitle>
     );
   }

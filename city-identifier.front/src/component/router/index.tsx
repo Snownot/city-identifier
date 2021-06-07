@@ -7,11 +7,11 @@ import utils from '../../utils/utils';
 
 const Router = () => {
 
-    const Identifier = utils.getRoute('/Identifier').component;
+    const Identifier = utils.getRoute('/').component;
 
     return (
         <Switch>
-            <Route path="/Identifier" render={(props: any) => <Identifier {...props} exact />} />
+            <Route path="/" render={(props: any) => <Identifier {...props} exact />} />
         </Switch>
     );
 };

@@ -2,16 +2,6 @@ import LoadableComponent from './../loadable/index';
 
 export const appRouters: any = [
   {
-    path: '/',
-    exact: true,
-    name: 'home',
-    permission: '',
-    title: 'Home',
-
-    component: LoadableComponent(() => import('../../component/layout/AppLayout')),
-    isLayout: true,
-  },
-  {
     path: '/user',
     name: 'user',
     title: 'User',
@@ -19,7 +9,7 @@ export const appRouters: any = [
     isLayout: true,
   },
   {
-    path: '/Identifier',
+    path: '/',
     name: 'Identifier',
     permission: '',
     title: 'Identifier',

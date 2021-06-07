@@ -1,15 +1,35 @@
-import {
-    AxiosInstance,
-    AxiosPromise,
-    AxiosRequestConfig,
-    AxiosResponse,
-} from 'axios';
+import {AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse,} from 'axios';
 
 export interface RequestHeaders {
     header: string[];
 }
 
-export type Response_getApiServicesAppSubscriptionGetAllList_200 = string
+export interface IAbpResponse<T> {
+    error: any,
+    result: T,
+    success: boolean,
+    targetUrl: string,
+    unAuthorizedRequest: boolean
+}
+
+export type DetailsDto = {
+    value: string;
+    city:string;
+};
+
+export type ComparedCityDto = {
+    startCity: string
+    endCity: string
+}
+
+export type ComparedResultDto ={
+    isCompared:boolean;
+}
+
+export type Response_getApiServicesAppSessionGetStartPoint_200 = DetailsDto;
+
+export type Response_getApiServicesAppSubscriptionGetAllList_200 = string;
+
 
 /**
  * Api Documentation
@@ -42,7 +62,7 @@ export class AppClient {
     readonly put: <T = any, R = AxiosResponse<T>> (url: string, data ?: any, config ?: AxiosRequestConfig) => Promise<R>;
     readonly patch: <T = any, R = AxiosResponse<T>> (url: string, data ?: any, config ?: AxiosRequestConfig) => Promise<R>;
 
-    public getApiServicesAppSessionGetCurrentLoginInformation(authorization: {}): AxiosPromise < Response_getApiServicesAppSubscriptionGetAllList_200 > {
+    public getApiServicesAppSessionGetCurrentLoginInformation(authorization: {}): AxiosPromise<Response_getApiServicesAppSubscriptionGetAllList_200> {
         let body = null;
         let path = "/connect";
         const query: {} = {};
@@ -53,9 +73,53 @@ export class AppClient {
             method: 'HEAD',
             url: path,
             params: query,
-            data: body ,
+            data: body,
         });
+    }
 
+    public getApiServicesAppSessionGetStartPoint(params: {
+        value?: string,
+    }): AxiosPromise<Response_getApiServicesAppSessionGetStartPoint_200> {
+        let body = null;
+        let path = "/city/getStartPoint";
+        const query: {} = {};
+        query[`value`] = params['value']
+        return this.axios({
+            method: 'GET',
+            url: path,
+            params: query,
+            data: (body) ? body : params,
+        });
+    }
+
+    public getApiServicesAppSessionGetEndPoint(params: {
+        value?: string,
+    }): AxiosPromise<Response_getApiServicesAppSessionGetStartPoint_200> {
+        let body = null;
+        let path = "/city/getEndPoint";
+        const query: {} = {};
+        query[`value`] = params['value']
+        return this.axios({
+            method: 'GET',
+            url: path,
+            params: query,
+            data: (body) ? body : params,
+        });
+    }
+
+    public getApiServicesAppSessionGetComparedCity(params: {
+        body?: ComparedCityDto,
+    }): AxiosPromise<ComparedResultDto> {
+        let body = null;
+        let path = "/city/compareCity";
+        const query: {} = {};
+        body = params['body'];
+        return this.axios({
+            method: 'POST',
+            url: path,
+            params: query,
+            data: (body) ? body : params,
+        });
     }
 
 

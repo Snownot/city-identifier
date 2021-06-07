@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JwtAuthenticationController {
 
-    @CrossOrigin
     @RequestMapping(value = "/connect", method = RequestMethod.HEAD)
     public ResponseEntity<?> connect() {
         return ResponseEntity.ok(SocketFlow.Status.OK);
