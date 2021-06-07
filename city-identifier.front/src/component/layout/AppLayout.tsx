@@ -2,14 +2,17 @@ import './AppLayout.less';
 
 import * as React from 'react';
 import {observer} from "mobx-react";
-interface IProps {
+import {RouteComponentProps} from "react-router-dom";
+
+
+interface IProps extends RouteComponentProps {
 
 }
+
 
 @observer
 class AppLayout extends React.Component<IProps> {
 
-  render() { return <div></div>}
 
 }
 

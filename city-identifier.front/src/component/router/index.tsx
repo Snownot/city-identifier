@@ -4,13 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 
 import utils from '../../utils/utils';
 
+
 const Router = () => {
 
-    const AppLayout = utils.getRoute('/').component;
+    const Identifier = utils.getRoute('/Identifier').component;
 
     return (
         <Switch>
-            <Route path="/" render={(props: any) => <AppLayout {...props} exact />} />
+            <Route path="/Identifier" render={(props: any) => <Identifier {...props} exact />} />
         </Switch>
     );
 };

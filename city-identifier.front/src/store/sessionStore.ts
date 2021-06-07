@@ -1,16 +1,14 @@
-import { action, observable } from 'mobx';
+import {action} from 'mobx';
 
 import sessionService from "../service/session/sessionService";
 
 
 class SessionStore {
-  @observable currentLogin: any = [];
 
-  @action
-  async getCurrentLoginInformation() : Promise<any> {
-    let result = await sessionService.getCurrentLoginInformation();
-    this.currentLogin = result;
-  }
+    @action
+    async getCurrentLoginInformation(): Promise<any> {
+        await sessionService.getCurrentLoginInformation();
+    }
 }
 
 export default SessionStore;

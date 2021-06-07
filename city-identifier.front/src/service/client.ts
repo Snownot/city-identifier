@@ -42,15 +42,18 @@ export class AppClient {
     readonly put: <T = any, R = AxiosResponse<T>> (url: string, data ?: any, config ?: AxiosRequestConfig) => Promise<R>;
     readonly patch: <T = any, R = AxiosResponse<T>> (url: string, data ?: any, config ?: AxiosRequestConfig) => Promise<R>;
 
-    public getApiServicesAppSessionGetCurrentLoginInformation(params: {}): AxiosPromise < Response_getApiServicesAppSubscriptionGetAllList_200 > {
+    public getApiServicesAppSessionGetCurrentLoginInformation(authorization: {}): AxiosPromise < Response_getApiServicesAppSubscriptionGetAllList_200 > {
         let body = null;
         let path = "/connect";
         const query: {} = {};
         return this.axios({
-            method: 'GET',
+            headers: {
+                Authorization: authorization
+            },
+            method: 'HEAD',
             url: path,
             params: query,
-            data: (body) ? body : params,
+            data: body ,
         });
 
     }
