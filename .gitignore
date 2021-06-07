@@ -32,3 +32,4 @@ yarn-error.log*
 build/
 /target/
 */target/**
+/city-identifier.front/node_modules/
