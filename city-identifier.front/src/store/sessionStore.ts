@@ -4,12 +4,13 @@ import sessionService from "../service/session/sessionService";
 
 
 class SessionStore {
-  @observable currentLogin: any = [];
+
+  @observable currentLogin?: string = "";
 
   @action
   async getCurrentLoginInformation() : Promise<any> {
     let result = await sessionService.getCurrentLoginInformation();
-    this.currentLogin = result;
+    console.log(result.data);
   }
 }
 

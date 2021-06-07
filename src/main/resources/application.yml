@@ -1,3 +1,24 @@
+spring:
+  datasource:
+    password: sa
+    url: jdbc:postgresql://localhost:5432/db
+    username: sa
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+      # SQL logging
+  #                show_sql: true
+  #                format_sql: false
+  flyway:
+    user: sa
+    password: sa
+    url: jdbc:postgresql://localhost:5432/db
+    locations: classpath:db/migration
+    enabled: true
+
 server:
   port: ${SERVER_PORT:8585}
 

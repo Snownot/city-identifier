@@ -12,6 +12,15 @@ export const appRouters: any = [
     isLayout: true,
     showInMenu: false,
   },
+  {
+    path: '/user',
+    name: 'user',
+    title: 'User',
+    component: LoadableComponent(() => import('../../component/layout/UserLayout')),
+    isLayout: true,
+    showInMenu: false,
+  },
 ];
+
 
 export const routers = [ ...appRouters];
